@@ -13,7 +13,7 @@ class BasePage:
         return self.driver.title
 
     def enter_text(self, locator, text):
-        element = self.wait.until(EC.visibility_of_element_located(locator))
+        element = self.wait.until(EC.visibility_of_element_located(locator)) # locator là 1 địa chỉ của phần tử, ví dụ như id, name, xpath
         element.clear()
         element.send_keys(text)
 
