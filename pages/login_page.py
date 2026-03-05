@@ -15,6 +15,7 @@ class LoginPage(BasePage):
     #2. Actions: declare all actions that can be performed on the page
     def open(self):
         self.open_url(self.URL)
+        
     
     def login(self, username, password):
         #This function group all actions to perform login flow

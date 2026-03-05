@@ -8,8 +8,14 @@ def driver():
     # Tự động tải và cài đặt ChromeDriver
     service = Service(ChromeDriverManager().install())
     options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized") # Mở toàn màn hình
+    options.add_argument("--headless==new") # Mở toàn màn hình
     
+    options.add_argument("--window-size=1920,1080")
+
+    options.add_argument("--disable-gpu")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+
     driver = webdriver.Chrome(service=service, options=options)
     
     yield driver # Trả driver về cho các file test sử dụng

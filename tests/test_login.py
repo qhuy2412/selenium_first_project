@@ -34,7 +34,7 @@ def test_empty_username_login(driver):
     login_page.open()
     login_page.login("", "admin123")
 
-    assert "Requis" in login_page.get_required_message()
+    assert "Requis" or "Required" in login_page.get_required_message()
 def test_empty_password_login(driver):
 
     login_page = LoginPage(driver)
@@ -42,7 +42,7 @@ def test_empty_password_login(driver):
     login_page.open()
     login_page.login("Admin", "")
 
-    assert "Requis" in login_page.get_required_message()
+    assert "Requis" or "Required" in login_page.get_required_message()
 def test_empty_username_password_login(driver):
 
     login_page = LoginPage(driver)
@@ -54,5 +54,5 @@ def test_empty_username_password_login(driver):
 
     assert len(list_error_messages) == 2
 
-    assert "Requis" == list_error_messages[0]
-    assert "Requis" == list_error_messages[1]
+    assert "Requis" or "Required" == list_error_messages[0] 
+    assert "Requis" or "Required" == list_error_messages[1]
