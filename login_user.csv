@@ -1,0 +1,7 @@
+username,password,expected,expected_type
+Admin,admin123,success,success
+Admin,admin1234,Invalid credentials,error_banner
+Admin1,admin123,Invalid credentials,error_banner
+,admin123,Required,field_required
+Admin,,Required,field_required
+,,"Required;Required",field_required_multiple
